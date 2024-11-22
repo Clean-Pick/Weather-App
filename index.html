@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+<section class="weatherContainer">
+    <div class="weather__result">
+        <h1>Somewhere</h1>
+        <h2>46.9°C</h2>
+        <h3>Cloudy</h3>
+    </div>
+
+    <label for="weather__currentCity" id="weather__input">
+    </label>
+
+    <input id="weather__currentCity" list="weather__cities" name="weather__currentCity"
+           placeholder="Your City">
+
+    <datalist id="weather__cities">
+        <option value="Test01"></option>
+        <option value="Test02"></option>
+        <option value="Test03"></option>
+        <option value="Test04"></option>
+        <option value="Test05"></option>
+        <option value="Test06"></option>
+        <option value="Test07"></option>
+        <option value="Test08"></option>
+        <option value="Vache"></option>
+    </datalist>
+</section>
+
+<script src="./js/index.js"></script>
+</body>
+</html>

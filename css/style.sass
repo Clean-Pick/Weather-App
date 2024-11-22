@@ -1,0 +1,71 @@
+@use 'reset' as *
+
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap')
+
+$font: "Germania One", system-ui
+$font-weight: 400
+$font-style: normal
+
+h1, h2, h3, h4, p
+  font-family: $font
+  font-weight: $font-weight
+  font-style: $font-style
+
+  color: #2F3B59
+
+h1
+  font-size: 120px
+
+h2
+  font-size: 100px
+
+h3
+  font-size: 50px
+
+
+body
+  background: rgb(238, 174, 202)
+  background: -moz-linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%)
+  background: -webkit-linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%)
+  background: linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca", endColorstr="#94bbe9", GradientType=1)
+
+.weatherContainer
+  display: grid
+  grid-template-columns: 1fr 12fr 1fr
+  grid-template-rows: 1fr 12fr 3fr 1fr
+
+  height: 100vh
+
+  justify-content: center
+  align-items: center
+  text-align: center
+
+  input
+    grid-column: 2
+    grid-row: 3
+
+    width: 20%
+    height: 50px
+
+    justify-self: center
+
+    border-radius: 50px
+
+    border: none
+
+    text-align: center
+
+  .weather__result
+    grid-row: 2
+    grid-column: 2
+
+    align-self: center
+
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+
+    justify-content: space-around
+
+    gap: 50px
