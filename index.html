@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <title>Weather App</title>
     <link href="./css/style.css" rel="stylesheet">
+
+
+    <script defer src="./js/geocodingAPI.js"></script>
+    <script defer src="./js/suggestions.js"></script>
+    <script defer src="./js/weatherAPI.js"></script>
 </head>
 <body>
 <section class="weatherContainer">
     <div class="weather__result">
-        <h1 id="city"></h1>
-        <h2 id="temp"></h2>
-        <h3 id="weather"></h3>
+        <h1 id="city">Undefined</h1>
+        <h2 id="temp">?</h2>
+        <div id="weatherIcon">
+            <img src="icons/unknown.png">
+        </div>
+        <h3 id="weather">Undefined</h3>
+
     </div>
 
     <label for="weather__currentCity" id="weather__input">
@@ -20,22 +29,13 @@
            placeholder="Your City">
 
     <datalist id="weather__cities">
-        <option value="Test01"></option>
-        <option value="Test02"></option>
-        <option value="Test03"></option>
-        <option value="Test04"></option>
-        <option value="Test05"></option>
-        <option value="Test06"></option>
-        <option value="Test07"></option>
-        <option value="Test08"></option>
-        <option value="Test09"></option>
-        <option value="Test10"></option>
-        <option value="Test11"></option>
-        <option value="Vache"></option>
     </datalist>
+
+    <button id="weather__submitButton">Submit</button>
+
+    <p id="error"></p>
 </section>
 
 
-<script src="./js/weatherAPI.js"></script>
 </body>
 </html>

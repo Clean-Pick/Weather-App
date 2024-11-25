@@ -41,7 +41,7 @@ body
   align-items: center
   text-align: center
 
-  input
+  input, button, #test
     grid-column: 2
     grid-row: 3
 
@@ -58,6 +58,24 @@ body
 
     &:focus
       outline: none
+
+  button
+    position: relative
+    left: 15%
+
+    width: 8%
+
+    color: #2F3B59
+
+    transition: background-color .3s, color .3s
+
+    &:hover
+      background-color: rgb(232, 130, 176)
+      color: white
+
+  #error
+    position: relative
+    top: 3em
 
   .weather__result
     grid-row: 2
@@ -87,3 +105,17 @@ body
     box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
     -webkit-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
     -moz-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+
+    #weatherIcon
+      width: 100%
+
+      img
+        width: 10%
+        height: auto
+
+        justify-self: center
+
+      h3
+        width: 80%
+        justify-self: center
+
