@@ -41,8 +41,6 @@ function updateSuggestions(cities) {
     cities.forEach((city) => {
         const option = document.createElement("option")
 
-        console.log(city)
-
         option.value = `${city.name}, ${city.country}`
         datalist.appendChild(option)
     })
