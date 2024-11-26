@@ -1,4 +1,4 @@
-#How to use :
+# How to use :
 
 1. Open index.html in your IDE.
 2. Run :
