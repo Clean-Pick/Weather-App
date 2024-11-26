@@ -1,37 +1,4 @@
-@use 'reset' as *
-
-@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap')
-
-$font: "Germania One", system-ui
-$font-weight: 400
-$font-style: normal
-
-h1, h2, h3, h4, h5, p
-  font-family: $font
-  font-weight: $font-weight
-  font-style: $font-style
-
-  color: #fafafa
-
-h1
-  font-size: 120px
-
-h2
-  font-size: 100px
-
-h3
-  font-size: 50px
-
-
-body
-  background: rgb(238, 174, 202)
-  background: -moz-linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%)
-  background: -webkit-linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%)
-  background: linear-gradient(0deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%)
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca", endColorstr="#94bbe9", GradientType=1)
-
-  background-repeat: no-repeat
-  background-size: cover
+@use "library" as *
 
 .weatherContainer
   display: grid
@@ -193,7 +160,7 @@ body
       border-radius: 20px
       border: rgba(255, 255, 255, 0.13) solid 3px
 
-      box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
-      -webkit-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
-      -moz-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+      box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, 0.49)
+      -webkit-box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, 0.49)
+      -moz-box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, 0.49)
 
