@@ -1,9 +1,9 @@
 #How to use :
 
-_Open index.html in your IDE.
-_Run :
+1. Open index.html in your IDE.
+2. Run :
 ```
 npm install
 ```
-_Open index.html in a web browser.
-_enjoy.
+3. Open index.html in a web browser.
+4. Enjoy.
