@@ -1,7 +1,7 @@
 input.addEventListener("input", async () => {
     const query = input.value.trim()
 
-    if (query.length >= 1) {
+    if (query.length > 0) {
         const cities = await fetchSuggestions(query)
         updateSuggestions(cities)
     } else {

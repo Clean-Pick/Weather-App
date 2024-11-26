@@ -4,8 +4,14 @@ const weatherIcon = document.getElementById('weatherIcon')
 const weather = document.getElementById('weather')
 const container = document.getElementById('weatherContainer')
 
+const dayPlusOne = document.getElementById("day+1")
+const dayPlusTwo = document.getElementById("day+2")
+const dayPlusThree = document.getElementById("day+3")
+const dayPlusFour = document.getElementById("day+4")
+const dayPlusFive = document.getElementById("day+5")
+
 function displayData(lat, lon) {
-    window.fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=10&appid=c343c77ded86ff06ef049f41e5f28bf9&units=metric`)
+    window.fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=c343c77ded86ff06ef049f41e5f28bf9&units=metric`)
         .then(res => res.json())
         .then(
             resJson => {
@@ -23,6 +29,26 @@ function displayData(lat, lon) {
                 weather.textContent = resJson.list[0].weather[0].description
 
                 backgroundMood(currentWeather)
+
+                dayPlusOne.innerHTML = `<h4>${resJson.list[8].dt_txt.substring(0, 10)}</h4>
+<h3>${resJson.list[8].main.temp} C°</h3>
+<h4>${resJson.list[8].weather[0].description}</h4>`
+
+                dayPlusTwo.innerHTML = `<h4>${resJson.list[16].dt_txt.substring(0, 10)}</h4>
+<h3>${resJson.list[16].main.temp} C°</h3>
+<h4>${resJson.list[16].weather[0].description}</h4>`
+
+                dayPlusThree.innerHTML = `<h4>${resJson.list[24].dt_txt.substring(0, 10)}</h4>
+<h3>${resJson.list[24].main.temp} C°</h3>
+<h4>${resJson.list[24].weather[0].description}</h4>`
+
+                dayPlusFour.innerHTML = `<h4>${resJson.list[32].dt_txt.substring(0, 10)}</h4>
+<h3>${resJson.list[32].main.temp} C°</h3>
+<h4>${resJson.list[32].weather[0].description}</h4>`
+
+                dayPlusFive.innerHTML = `<h4>${resJson.list[39].dt_txt.substring(0, 10)}</h4>
+<h3>${resJson.list[39].main.temp} C°</h3>
+<h4>${resJson.list[39].weather[0].description}</h4>`
             }
         )
 }

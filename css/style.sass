@@ -6,7 +6,7 @@ $font: "Germania One", system-ui
 $font-weight: 400
 $font-style: normal
 
-h1, h2, h3, h4, p
+h1, h2, h3, h4, h5, p
   font-family: $font
   font-weight: $font-weight
   font-style: $font-style
@@ -84,40 +84,116 @@ body
     grid-row: 2
     grid-column: 2
 
-    align-self: center
+    display: grid
+    grid-template-columns: 6fr 1fr
+    grid-template-rows: repeat(5, 1fr)
 
-    display: flex
-    flex-direction: column
-    flex-wrap: wrap
+    gap: 32px
 
-    justify-content: space-around
-    justify-self: center
+    height: 700px
 
-    gap: 50px
+    .weather__result__today
+      grid-area: 1/1/6/2
 
-    width: 60%
+      align-self: start
 
-    padding: 1em
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
 
-    background-color: rgba(255, 255, 255, 0.1)
-    backdrop-filter: blur(10px)
+      justify-content: space-around
+      justify-self: center
 
-    border-radius: 20px
-    border: rgba(255, 255, 255, 0.13) solid 3px
+      gap: 50px
 
-    box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
-    -webkit-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
-    -moz-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
-
-    #weatherIcon
       width: 100%
+      height: 700px
 
-      img
-        width: 10%
-        height: auto
+      padding: 1em
 
-        justify-self: center
+      background-color: rgba(255, 255, 255, 0.1)
+      backdrop-filter: blur(10px)
 
-      h3
-        width: 80%
-        justify-self: center
+      border-radius: 20px
+      border: rgba(255, 255, 255, 0.13) solid 3px
+
+      box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+      -webkit-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+      -moz-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+
+      #weatherIcon
+        width: 100%
+
+        img
+          width: 10%
+          height: auto
+
+          justify-self: center
+
+        h3
+          width: 80%
+          justify-self: center
+
+    .weather__result__side
+      grid-area: 1 / 2 / 6 / 3
+
+      display: grid
+
+      grid-template-columns: 1fr
+      grid-template-rows: repeat(5, 1fr)
+
+      overflow: scroll
+
+      gap: 32px
+
+
+      &::-webkit-scrollbar
+        width: 5px
+        height: 0
+
+        -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3)
+        background-color: rgba(255, 255, 255, .2)
+
+      &::-webkit-scrollbar-thumb
+        border-radius: 10px
+
+        background: rgb(63, 94, 251)
+        background: linear-gradient(0deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%)
+
+    &::-webkit-scrollbar-track
+
+      border-radius: 10px
+
+    &::-webkit-scrollbar-track-piece
+      border-radius: 10px
+
+    &::-webkit-scrollbar-button
+      display: none
+
+    &::-webkit-scrollbar-corner
+      display: none
+
+
+    .weather__result__side__item
+      grid-column: 1
+
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
+
+      gap: 10px
+
+      height: 100%
+
+      padding: 1em
+
+      background-color: rgba(255, 255, 255, 0.1)
+      backdrop-filter: blur(10px)
+
+      border-radius: 20px
+      border: rgba(255, 255, 255, 0.13) solid 3px
+
+      box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+      -webkit-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+      -moz-box-shadow: 1px 1px 19px 1px rgba(255, 255, 255, 0.49)
+
