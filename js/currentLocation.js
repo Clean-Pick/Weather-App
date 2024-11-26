@@ -1,8 +1,8 @@
 const successCallback = (position) => {
     console.log(position);
 
-    const lat = GeolocationPosition.coords.latitude
-    const lon = GeolocationPosition.coords.longitude
+    const lat = position.coords.latitude
+    const lon = position.coords.longitude
 
     displayData(lat, lon)
 };
