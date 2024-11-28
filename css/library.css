@@ -168,6 +168,14 @@ h3 {
   font-size: 50px;
 }
 
+h4 {
+  font-size: 45px;
+}
+
+p {
+  font-size: 20px;
+}
+
 body {
   background: rgb(238, 174, 202);
   background: -moz-linear-gradient(0deg, rgb(238, 174, 202) 0%, rgb(148, 187, 233) 100%);

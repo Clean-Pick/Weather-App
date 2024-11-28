@@ -5,7 +5,6 @@
     <title>Weather App</title>
     <link href="./css/style.css" rel="stylesheet">
 
-
     <script defer src="./js/geocodingAPI.js"></script>
     <script defer src="./js/suggestions.js"></script>
     <script defer src="./js/weatherAPI.js"></script>
@@ -15,57 +14,95 @@
 <section class="weatherContainer">
     <div class="weather__result">
         <div class="weather__result__today">
-            <h1 id="city">Undefined</h1>
-            <h2 id="temp">?</h2>
-            <div id="weatherIcon">
-                <img src="icons/unknown.png">
+            <h2 id="city">Undefined</h2>
+            <div id="weather__result__dateInfos">
+                <h2 class="day">Someday</h2>
+                <h4 class="computedDate">01 January 1973</h4>
             </div>
             <h3 id="weather">Undefined</h3>
+
+            <div id="populationContainer">
+                <div class="popImgContainer">
+                    <img src="./icons/population.png" alt="">
+                </div>
+                <p id="popNumber">99999999999</p>
+            </div>
+
+            <div class="weather__result__tempRelated">
+                <div class="weather__result__tempRelated__tempAndIconContainer">
+                    <h2 id="temp">?</h2>
+                    <div id="weatherIcon">
+                        <img src="icons/unknown.png">
+                    </div>
+                </div>
+
+                <div id="min">
+                    <h4>Min</h4>
+                    <h3 id="minTemp">X C°</h3>
+                </div>
+
+                <div id="max">
+                    <h4>Max</h4>
+                    <h3 id="maxTemp">X C°</h3>
+                </div>
+            </div>
+
         </div>
 
         <div class="weather__result__side">
             <div class="weather__result__side__item" id="day+1">
-                <h4>date</h4>
+                <h4>Day</h4>
                 <h3>Temp</h3>
-                <h4>Desc</h4>
+                <div class="subIcon">
+                    <img alt="" src="">
+                </div>
             </div>
             <div class="weather__result__side__item" id="day+2">
-                <h4>date</h4>
+                <h4>Day</h4>
                 <h3>Temp</h3>
-                <h4>Desc</h4>
+                <div class="subIcon">
+                    <img alt="" src="">
+                </div>
             </div>
-            <div class="weather__result__side__item" id="day+3">
-                <h4>date</h4>
-                <h3>Temp</h3>
-                <h4>Desc</h4>
-            </div>
-            <div class="weather__result__side__item" id="day+4">
-                <h4>date</h4>
-                <h3>Temp</h3>
-                <h4>Desc</h4>
-            </div>
-            <div class="weather__result__side__item" id="day+5">
-                <h4>date</h4>
-                <h3>Temp</h3>
-                <h4>Desc</h4>
+                <div class="weather__result__side__item" id="day+3">
+                    <h4>Day</h4>
+                    <h3>Temp</h3>
+                    <div class="subIcon">
+                        <img alt="" src="">
+                    </div>
+                </div>
+                <div class="weather__result__side__item" id="day+4">
+                    <h4>Day</h4>
+                    <h3>Temp</h3>
+                    <div class="subIcon">
+                        <img alt="" src="">
+                    </div>
+                </div>
+                <div class="weather__result__side__item" id="day+5">
+                    <h4>Day</h4>
+                    <h3>Temp</h3>
+                    <div class="subIcon">
+                        <img alt="" src="">
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </div>
 
-    <label for="weather__currentCity" id="weather__input">
-    </label>
+    <div class="inputContainer">
+        <label for="weather__currentCity" id="weather__input">
+        </label>
 
-    <input id="weather__currentCity" list="weather__cities" name="weather__currentCity"
-           placeholder="Your City">
+        <input id="weather__currentCity" list="weather__cities" name="weather__currentCity"
+               placeholder="Your City">
 
-    <datalist id="weather__cities">
-    </datalist>
+        <datalist id="weather__cities">
+        </datalist>
 
-    <button id="weather__submitButton">Submit</button>
+        <button id="weather__submitButton">Submit</button>
 
-    <p id="error"></p>
+        <p id="error"></p>
+    </div>
 </section>
 
 

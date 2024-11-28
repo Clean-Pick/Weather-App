@@ -3,6 +3,10 @@ const temp = document.getElementById('temp')
 const weatherIcon = document.getElementById('weatherIcon')
 const weather = document.getElementById('weather')
 const container = document.getElementById('weatherContainer')
+const min = document.getElementById('minTemp')
+const max = document.getElementById('maxTemp')
+const todayDate = document.getElementById('weather__result__dateInfos')
+const population = document.getElementById('popNumber')
 
 const dayPlusOne = document.getElementById("day+1")
 const dayPlusTwo = document.getElementById("day+2")
@@ -17,44 +21,113 @@ function displayData(lat, lon) {
             resJson => {
                 console.log(resJson)
 
-                const currentWeather = resJson.list[0].weather[0].icon
+                let cleanPopNumber = resJson.city.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 
                 city.textContent = resJson.city.name
 
-                temp.textContent = resJson.list[0].main.temp += " C°"
+                todayDate.innerHTML = currentDate(0)
 
-                weatherIcon.innerHTML = `<img src="icons/${resJson.list[0].weather[0].icon}.png"/>`;
+                population.textContent = cleanPopNumber += " residents"
+
+                temp.textContent = getTemp(0)
+
+                roundedMin = Math.floor(resJson.list[0].main.temp_min)
+                minTemp.textContent = roundedMin + " C°"
+
+                roundedMax = Math.floor(resJson.list[0].main.temp_max)
+                maxTemp.textContent = roundedMax + " C°"
+
+                weatherIcon.innerHTML = getIcon(0)
 
                 weather.textContent = resJson.list[0].weather[0].description
 
+
+                let currentWeather = resJson.list[0].weather[0].icon
                 backgroundMood(currentWeather)
 
-                dayPlusOne.innerHTML = `<h4>${resJson.list[8].dt_txt.substring(0, 10)}</h4>
-<h3>${resJson.list[8].main.temp} C°</h3>
-<h4>${resJson.list[8].weather[0].description}</h4>`
+                dayPlusOne.innerHTML = currentDate(8) + getTemp(8) + getIcon(8)
 
-                dayPlusTwo.innerHTML = `<h4>${resJson.list[16].dt_txt.substring(0, 10)}</h4>
-<h3>${resJson.list[16].main.temp} C°</h3>
-<h4>${resJson.list[16].weather[0].description}</h4>`
+                dayPlusTwo.innerHTML = currentDate(16) + getTemp(16) + getIcon(16)
 
-                dayPlusThree.innerHTML = `<h4>${resJson.list[24].dt_txt.substring(0, 10)}</h4>
-<h3>${resJson.list[24].main.temp} C°</h3>
-<h4>${resJson.list[24].weather[0].description}</h4>`
+                dayPlusThree.innerHTML = currentDate(24) + getTemp(24) + getIcon(24)
 
-                dayPlusFour.innerHTML = `<h4>${resJson.list[32].dt_txt.substring(0, 10)}</h4>
-<h3>${resJson.list[32].main.temp} C°</h3>
-<h4>${resJson.list[32].weather[0].description}</h4>`
+                dayPlusFour.innerHTML = currentDate(32) + getTemp(32) + getIcon(32)
 
-                dayPlusFive.innerHTML = `<h4>${resJson.list[39].dt_txt.substring(0, 10)}</h4>
-<h3>${resJson.list[39].main.temp} C°</h3>
-<h4>${resJson.list[39].weather[0].description}</h4>`
+                dayPlusFive.innerHTML = currentDate(39) + getTemp(39) + getIcon(39)
+
+
+                function getTemp(index) {
+                    if (index !== 0) {
+                        let temp = Math.floor(resJson.list[index].main.temp) + " C°"
+                        return `<h3>${temp}</h3>`
+                    } else {
+                        let temp = Math.floor(resJson.list[index].main.temp) + " C°"
+                        return `${temp}`
+                    }
+                }
+
+                function getIcon(index) {
+                    if (index === 0) {
+                        return `<img src="icons/${resJson.list[index].weather[0].icon}.png"/>`
+                    } else {
+                        return `<div class="subIcon">
+                        <img src="icons/${resJson.list[index].weather[0].icon}.png">
+                        </div>`
+                    }
+
+                }
+
+                function currentDate(index) {
+                    let date = resJson.list[index].dt
+                    let timezone = parseInt(resJson.city.timezone)
+
+                    const weekdays = [
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ]
+                    const allMonths = [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December",
+                    ]
+
+                    const currentDate = new Date(date * 1000)
+
+                    let dayIndex = currentDate.getDay()
+                    let dayString = weekdays[dayIndex]
+                    let dayDate = currentDate.getUTCDate()
+                    let monthIndex = currentDate.getMonth()
+                    let month = allMonths[monthIndex]
+                    let year = currentDate.getFullYear()
+
+                    if (index !== 0) {
+                        return `<h4>${dayString}</h4>`
+                    } else {
+                        return `<h2 class="day">${dayString}</h2>
+                <h4 class="computedDate">${dayDate + " " + month + " " + year}</h4>`
+                    }
+
+                }
             }
         )
 }
 
 function backgroundMood(currentWeather) {
-    console.log(currentWeather)
 
     switch (currentWeather) {
         case "01d":
@@ -113,7 +186,14 @@ function backgroundMood(currentWeather) {
             document.body.style.backgroundImage = 'url("https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg")'
             break
     }
+
+
 }
+
+
+
+
+
 
 
 
