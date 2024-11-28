@@ -329,6 +329,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
+  height: 137px;
 }
 .weatherContainer .weather__result .weather__result__today .weather__result__tempRelated .weather__result__tempRelated__tempAndIconContainer {
   grid-column: 1;
@@ -338,6 +339,7 @@ body {
   grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
+  height: 137px;
 }
 .weatherContainer .weather__result .weather__result__today .weather__result__tempRelated .weather__result__tempRelated__tempAndIconContainer #temp {
   grid-column: 1;
@@ -346,6 +348,7 @@ body {
 .weatherContainer .weather__result .weather__result__today .weather__result__tempRelated .weather__result__tempRelated__tempAndIconContainer #weatherIcon {
   grid-column: 2;
   grid-row: 1;
+  justify-self: end;
 }
 .weatherContainer .weather__result .weather__result__today .weather__result__tempRelated .weather__result__tempRelated__tempAndIconContainer #weatherIcon img {
   width: auto;

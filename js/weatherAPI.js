@@ -33,10 +33,10 @@ function displayData(lat, lon) {
                 temp.textContent = getTemp(0)
 
                 roundedMin = Math.floor(resJson.list[0].main.temp_min)
-                minTemp.textContent = roundedMin + " C°"
+                minTemp.textContent = roundedMin + "°"
 
                 roundedMax = Math.floor(resJson.list[0].main.temp_max)
-                maxTemp.textContent = roundedMax + " C°"
+                maxTemp.textContent = roundedMax + "°"
 
                 weatherIcon.innerHTML = getIcon(0)
 
@@ -59,10 +59,10 @@ function displayData(lat, lon) {
 
                 function getTemp(index) {
                     if (index !== 0) {
-                        let temp = Math.floor(resJson.list[index].main.temp) + " C°"
+                        let temp = Math.floor(resJson.list[index].main.temp) + "C°"
                         return `<h3>${temp}</h3>`
                     } else {
-                        let temp = Math.floor(resJson.list[index].main.temp) + " C°"
+                        let temp = Math.floor(resJson.list[index].main.temp) + "C°"
                         return `${temp}`
                     }
                 }
