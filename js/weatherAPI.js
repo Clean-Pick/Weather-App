@@ -116,9 +116,12 @@ function displayData(lat, lon) {
 
                     let dayIndex = currentDate.getDay()
                     let dayString = weekdays[dayIndex]
+                    
                     let dayDate = currentDate.getUTCDate()
+                    
                     let monthIndex = currentDate.getMonth()
                     let month = allMonths[monthIndex]
+                    
                     let year = currentDate.getFullYear()
 
                     if (index !== 0) {

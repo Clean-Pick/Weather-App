@@ -353,6 +353,7 @@ body {
 .weatherContainer .weather__result .weather__result__today .weather__result__tempRelated .weather__result__tempRelated__tempAndIconContainer #temp {
   grid-column: 1;
   grid-row: 1;
+  padding-left: -16px;
 }
 .weatherContainer .weather__result .weather__result__today .weather__result__tempRelated .weather__result__tempRelated__tempAndIconContainer #weatherIcon {
   grid-column: 2;
