@@ -7,6 +7,8 @@ const min = document.getElementById('minTemp')
 const max = document.getElementById('maxTemp')
 const todayDate = document.getElementById('weather__result__dateInfos')
 const population = document.getElementById('popNumber')
+const windSpeed = document.getElementById('windPower')
+const humidity = document.getElementById('humidity')
 
 const dayPlusOne = document.getElementById("day+1")
 const dayPlusTwo = document.getElementById("day+2")
@@ -29,6 +31,10 @@ function displayData(lat, lon) {
                 todayDate.innerHTML = currentDate(0)
 
                 population.textContent = cleanPopNumber += " residents"
+
+                windSpeed.textContent = windPower(0)
+
+                humidity.textContent = resJson.list[0].main.humidity += "%"
 
                 temp.textContent = getTemp(0)
 
@@ -122,6 +128,13 @@ function displayData(lat, lon) {
                 <h4 class="computedDate">${dayDate + " " + month + " " + year}</h4>`
                     }
 
+                }
+
+                function windPower(index) {
+                    let rawSpeed = resJson.list[index].wind.speed
+                    let msToKmh = Math.floor(rawSpeed * 3.6)
+
+                    return `${msToKmh} Km/h`
                 }
             }
         )
