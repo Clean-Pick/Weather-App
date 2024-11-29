@@ -420,21 +420,20 @@ body {
   grid-column: 1;
   grid-row: 1;
 }
-.weatherContainer .weather__result .weather__result__side__item .subIcon {
+.weatherContainer .weather__result .weather__result__side__item h3 {
+  grid-column: 1;
+  grid-row: 3;
+}
+.weatherContainer .weather__result .weather__result__side__item .subIconContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 1;
   grid-row: 2;
-  height: 80px;
 }
-.weatherContainer .weather__result .weather__result__side__item .subIcon img {
-  width: 80px;
-  height: 80px;
-}
-.weatherContainer .weather__result .weather__result__side__item h3 {
-  grid-column: 1;
-  grid-row: 3;
+.weatherContainer .weather__result .weather__result__side__item .subIconContainer .subIcon {
+  width: 20px;
+  height: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

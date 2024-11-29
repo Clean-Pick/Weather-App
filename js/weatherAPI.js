@@ -9,6 +9,7 @@ const todayDate = document.getElementById('weather__result__dateInfos')
 const population = document.getElementById('popNumber')
 const windSpeed = document.getElementById('windPower')
 const humidity = document.getElementById('humidity')
+const icon = document.getElementsByClassName('weather__result__today__miscContainer__item__img')
 
 const dayPlusOne = document.getElementById("day+1")
 const dayPlusTwo = document.getElementById("day+2")
@@ -73,15 +74,11 @@ function displayData(lat, lon) {
                     }
                 }
 
-                function getIcon(index) {
-                    if (index === 0) {
-                        return `<img src="icons/${resJson.list[index].weather[0].icon}.png"/>`
-                    } else {
-                        return `<div class="subIcon">
-                        <img src="icons/${resJson.list[index].weather[0].icon}.png">
-                        </div>`
-                    }
 
+                function getIcon(index) {
+                    let iconId = resJson.list[index].weather[0].icon
+
+                    return `<img alt="weather" src="https://openweathermap.org/img/wn/${iconId}@2x.png" class="subIcon" style="width: 100px; justify-self: center">`
                 }
 
                 function currentDate(index) {
@@ -116,12 +113,12 @@ function displayData(lat, lon) {
 
                     let dayIndex = currentDate.getDay()
                     let dayString = weekdays[dayIndex]
-                    
+
                     let dayDate = currentDate.getUTCDate()
-                    
+
                     let monthIndex = currentDate.getMonth()
                     let month = allMonths[monthIndex]
-                    
+
                     let year = currentDate.getFullYear()
 
                     if (index !== 0) {
